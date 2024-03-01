@@ -1,6 +1,30 @@
 @QuickConfig_HostAddress = http://localhost:5079
 
-#GET {{QuickConfig_HostAddress}}/weatherforecast/
-#Accept: application/json
+GET {{QuickConfig_HostAddress}}/secrets/example/example/fake
+Accept: application/json
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/invalid
+Accept: application/json
+
+###
+
+GET {{QuickConfig_HostAddress}}/secrets/example/example/lastyear
+Accept: application/json
+
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/secret
+Accept: application/json
+
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/bad
+Accept: application/json
+
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/expired
+Accept: application/json
 
 ###
