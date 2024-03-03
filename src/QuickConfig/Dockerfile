@@ -3,15 +3,14 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 8410
-EXPOSE 8411
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["QuickConfig/QuickConfig.csproj", "QuickConfig/"]
+COPY ["src/QuickConfig/QuickConfig.csproj", "QuickConfig/"]
 RUN dotnet restore "./QuickConfig/./QuickConfig.csproj"
-COPY . .
+COPY /src .
 WORKDIR "/src/QuickConfig"
 RUN dotnet build "./QuickConfig.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
