@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickConfig", "src\QuickCon
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49AC0553-DD3F-427D-9208-743EF1AC6156}"
 	ProjectSection(SolutionItems) = preProject
+		http-client.env.json = http-client.env.json
 		README.md = README.md
 	EndProjectSection
 EndProject

@@ -24,7 +24,7 @@ Too early for: backups, logging, authnz, docker, errors, tests, love
 
  [/] Quick Config
  [ ] Quick Client
- [ ] PS script
+ [/] PS script
  [ ] Cmd Tool
  [ ] Blazor Web
  [ ] [REDACTED]
