@@ -1,4 +1,4 @@
-# Dengine
+﻿# Dengine
 
 This is phase 1 of a larger project. This is a draft of the document.
 
@@ -22,9 +22,9 @@ Too early for: backups, logging, authnz, docker, errors, tests, love
 
 ### Quick schedule
 
- [/] Quick Config
- [ ] Quick Client
- [/] PS script
+ [🌱] Quick Config
+ [🌱] Quick Client
+ [🌱] PS script
  [ ] Cmd Tool
  [ ] Blazor Web
  [ ] [REDACTED]
@@ -36,3 +36,6 @@ Too early for: backups, logging, authnz, docker, errors, tests, love
 
 This is a small tool to act as a central helper to act as an adhoc source of truth for config when devs are starting up complex projects.
 
+### Quick Config Client
+
+This is a basic console app to test and/or demo usage of the service.
