@@ -31,7 +31,7 @@ httpClient.BaseAddress = new Uri($"https://localhost:7096");
 
 var example = new ExampleClient(httpClient);
 
-var i = await example.GetSecretAsync("example", "example", "fake");
+var i = await example.GetSecretAsync("example", "example", "fake"); //env/app/key
 if (i is not null) { Console.WriteLine($"Found {i.Key}!"); }
 
 Console.ReadKey();
@@ -41,9 +41,9 @@ void QuickLog(DelegateResult<HttpResponseMessage> result, TimeSpan span) => Cons
 
 internal sealed class ExampleClient(HttpClient client)
 {
-    public async Task<ConfigValue?> GetSecretAsync(string app, string env, string key)
+    public async Task<ConfigValue?> GetSecretAsync(string env, string app, string key)
     {
-        return await client.GetFromJsonAsync<ConfigValue>($"/secrets/{app}/{env}/{key}");
+        return await client.GetFromJsonAsync<ConfigValue>($"/secrets/{env}/{app}/{key}");
     }
 }
 

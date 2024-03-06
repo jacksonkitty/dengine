@@ -29,14 +29,24 @@ app.Run();
 // Helpers
 IResult HandleGet(string env, string app, string key)
 {
-    if (!env.Equals("example", StringComparison.OrdinalIgnoreCase)) return Results.NotFound();
-    return secrets.FirstOrDefault(a => a.Key == key && a.Value.Env == env) is { } secret ? Results.Ok(secret.Value) : Results.NotFound();
+    if (secrets.ContainsKey(key))
+    {
+        var secret = secrets.FirstOrDefault(a => a.Key == key);
+     
+        if (secret.Value.Env == env && secret.Value.App == app)
+        {
+            return Results.Ok(secret.Value);
+        }
+    }
+
+    return Results.NotFound();
 }
 
 IResult HandlePost(ConfigValue secret)
 {
     try
     {
+        app.Logger.LogInformation("Saving {key}", secret.Key);
         secrets[secret.Key] = secret;
         return Results.Accepted(secret.Value);
     }
