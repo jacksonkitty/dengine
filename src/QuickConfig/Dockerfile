@@ -3,7 +3,10 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 4410
+#EXPOSE 4411
+ENV ASPNETCORE_HTTP_PORTS=80;4410
+#ENV ASPNETCORE_HTTPS_PORTS=443;4411
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
