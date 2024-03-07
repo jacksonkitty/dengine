@@ -1,6 +1,6 @@
 ﻿# Dengine
 
-This is phase 1 of a larger project. This is a draft of the document.
+This is phase 1 of a larger project, currently split between two solutions. This is a draft of the document for all of it.
 
 ## Summary
 
@@ -39,3 +39,7 @@ This is a small tool to act as a central helper to act as an adhoc source of tru
 ### Quick Config Client
 
 This is a basic console app to test and/or demo usage of the service.
+
+### Quick Steno
+
+A very simple speech to text helper for use with a Stream Deck.
