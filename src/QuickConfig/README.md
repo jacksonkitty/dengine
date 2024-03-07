@@ -11,7 +11,7 @@ Quick notes for a quick config
 
  ```
 docker build --tag quickconfig:v0_1 -f .\src\QuickConfig\Dockerfile .`
-docker run --name containerName --network networkName -d --restart unless-stopped -p 8411:8080 quickconfig
+docker run --name containerName --network networkName -d --restart unless-stopped  -p 8410:4410 -p 8411:4411 quickconfig
  ```
 
 ### Populate
