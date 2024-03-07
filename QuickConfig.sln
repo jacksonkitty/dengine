@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34321.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickConfig", "src\QuickConfig\QuickConfig.csproj", "{844865DD-4B14-4FE2-B2DA-AEDEE580C906}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49AC0553-DD3F-427D-9208-743EF1AC6156}"
+	ProjectSection(SolutionItems) = preProject
+		http-client.env.json = http-client.env.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickConfigClient", "src\QuickConfigClient\QuickConfigClient.csproj", "{89A776C7-5157-46BD-8C6D-ED92E5FEB1BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{844865DD-4B14-4FE2-B2DA-AEDEE580C906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844865DD-4B14-4FE2-B2DA-AEDEE580C906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844865DD-4B14-4FE2-B2DA-AEDEE580C906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844865DD-4B14-4FE2-B2DA-AEDEE580C906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A776C7-5157-46BD-8C6D-ED92E5FEB1BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A776C7-5157-46BD-8C6D-ED92E5FEB1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A776C7-5157-46BD-8C6D-ED92E5FEB1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A776C7-5157-46BD-8C6D-ED92E5FEB1BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EDD8510-5DF4-4DE7-8C5C-2A060AF7C34E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,48 @@
+GET {{QuickConfig_HostAddress}}/secrets/example/example/fake
+Accept: application/json
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/invalid
+Accept: application/json
+
+###
+
+GET {{QuickConfig_HostAddress}}/secrets/example/example/lastyear
+Accept: application/json
+
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/secret
+Accept: application/json
+
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/bad
+Accept: application/json
+
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/expired
+Accept: application/json
+
+###
+POST {{QuickConfig_HostAddress}}/secrets
+Content-Type: application/json
+
+{
+    "Env": "example",
+    "App": "example",
+    "Key":"created",
+    "Value": "{{$timestamp}}",
+    "IsValid": true
+}
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/created
+Accept: application/json
+
+###
+GET {{QuickConfig_HostAddress}}/secrets/example/example/scripted
+Accept: application/json
+
+###
