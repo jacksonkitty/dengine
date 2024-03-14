@@ -1,0 +1,48 @@
+﻿@using Core.Data;
+
+<div>Note @filename</div>
+
+<button @onclick="() => UpdateHeading()">
+    @contentLength
+</button>
+
+<div>@contentLength</div>
+
+@code {
+    [Parameter] 
+    public Note? Current { get; set; }
+
+    private string? contents = string.Empty;
+    private int contentLength;
+    private string filename = "?";
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.filename = Current?.FileName ?? "Unknown";
+        this.RefreshContents();
+    }
+
+    private async Task UpdateHeading()
+    {
+        this.contents = await this.GetContentAsStringAsync();
+        this.RefreshContents();
+    }
+
+    private void RefreshContents()
+    {
+        contentLength = contents?.Length ?? -1;
+        this.StateHasChanged();
+    }
+
+    private async Task<string> GetContentAsStringAsync()
+    {
+        try
+        {
+            return await File.ReadAllTextAsync(filename);
+        }
+        catch (Exception ex)
+        {
+            return string.Empty;
+        }
+    }
+}

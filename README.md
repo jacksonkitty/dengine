@@ -26,15 +26,20 @@ Too early for: backups, logging, authnz, docker, errors, tests, love
  [🌱] Quick Client
  [🌱] PS script
  [ ] Cmd Tool
- [ ] Blazor Web
+ [🌱] Blazor Web
  [ ] [REDACTED]
  [ ] [REDACTED]
+
+## History
+
+Wave 1 - Tools (Quick Config + Client, Quick Steno)
+Wave 2 - Basics (Satchel initial, Quick Bot)
 
 ## Components
 
 ### Quick Config Service
 
-This is a small tool to act as a central helper to act as an adhoc source of truth for config when devs are starting up complex projects.
+This is a small tool to act as a central helper to act as an ad hoc source of truth for config when devs are starting up complex projects.
 
 ### Quick Config Client
 
@@ -43,3 +48,7 @@ This is a basic console app to test and/or demo usage of the service.
 ### Quick Steno
 
 A very simple speech to text helper for use with a Stream Deck.
+
+### Satchel
+
+A backend for note display.

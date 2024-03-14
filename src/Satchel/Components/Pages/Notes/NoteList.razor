@@ -1,0 +1,34 @@
+﻿@using Core.Data;
+@using Satchel.Components.Pages.Notes;
+
+<h3>NoteList</h3>
+@foreach (var n in @Notes)
+{
+    <NotePage Current=@n></NotePage>
+}
+
+@code {
+    [Parameter]
+    public string? CurrentFolder { get; set; }
+    private IEnumerable<Note> Notes = new List<Note>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        FetchCurrentNotes();
+        this.StateHasChanged();
+    }
+
+    private void FetchCurrentNotes()
+    {
+        var prev = Notes;
+        //TODO: passed path, split to root + subfolder
+        string path = CurrentFolder ?? @"C:\Data\Sample\Notes";
+
+        //TODO: recursive folder
+        var currentFiles = Directory.EnumerateFiles(path);
+        Notes = currentFiles.Select(cf => new Note(cf));
+
+       // this.StateHasChanged();
+    }
+}
+
