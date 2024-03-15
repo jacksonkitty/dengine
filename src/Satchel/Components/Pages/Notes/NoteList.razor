@@ -20,15 +20,12 @@
 
     private void FetchCurrentNotes()
     {
-        var prev = Notes;
-        //TODO: passed path, split to root + subfolder
-        string path = CurrentFolder ?? @"C:\Data\Sample\Notes";
-
-        //TODO: recursive folder
-        var currentFiles = Directory.EnumerateFiles(path);
-        Notes = currentFiles.Select(cf => new Note(cf));
-
-       // this.StateHasChanged();
+        if (!string.IsNullOrWhiteSpace(CurrentFolder))
+        {
+            //TODO: recursive folder
+            var currentFiles = Directory.EnumerateFiles(CurrentFolder);
+            Notes = currentFiles.Select(cf => new Note(cf));
+        }
     }
 }
 
