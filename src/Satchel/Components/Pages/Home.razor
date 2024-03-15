@@ -1,7 +1,18 @@
 ﻿@page "/"
-
+@inject IConfiguration Configuration
 @using Satchel.Components.Pages.Notes;
 
-<PageTitle>Satchel Name on HostName</PageTitle>
+<PageTitle>Satchel on @Environment.MachineName</PageTitle>
 
-<NoteList />
+<NoteList CurrentFolder=@Folder />
+
+
+@code {
+    public string Folder => folder;
+    private string folder;
+
+    protected override async Task OnInitializedAsync()
+    {
+        folder = Configuration["NoteRoot"];
+    }
+}
