@@ -7,12 +7,6 @@ public interface INoteManagerOptions
     string NoteRootFolder { get; set; }
 }
 
-public interface IResilientConfigClientOptions : IResilientClientOptions
-{
-    string App { get; set; }
-    string Env { get; set; }
-}
-
 public interface IStenoOptions : INoteManagerOptions, IResilientConfigClientOptions { }
 
 public class StenoOptions : IStenoOptions

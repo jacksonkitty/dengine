@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using QuickSteno;
+using QuickTools.Core;
 
 var environmentName = "Development";
 var configuration = new ConfigurationBuilder()
@@ -10,7 +11,7 @@ var configuration = new ConfigurationBuilder()
 var options = configuration.GetSection("StenoOptions").Get<StenoOptions>();
 const string defaultRoot = @"C:\notes"; //C:\data\sample\notes
 
-var example = new ExampleClient(options);
+var example = new LocalClient(options);
 var key = await example.GetSecretAsync("SubscriptionKey");
 var region = await example.GetSecretAsync("ServiceRegion");
 

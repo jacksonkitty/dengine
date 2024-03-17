@@ -1,9 +1,6 @@
-﻿namespace QuickSteno;
+﻿namespace QuickTools.Core;
 
 using System.Net.Http.Json;
-using QuickTools.Core;
-
-public record ConfigValue(string Env, string App, string Key, string Value, DateTimeOffset? ExpiresOn = null, bool IsValid = false, bool IsSecure = false);
 
 public abstract class ConfigClient<T>
 {
@@ -19,13 +16,7 @@ public abstract class ConfigClient<T>
     public async Task<T?> GetSecretAsync(string key)
     {
         var path = $"/secrets/{options.Env}/{options.App}/{key}";
-       // var test = await client.GetAsync(path);
+        // var test = await client.GetAsync(path);
         return await client.GetFromJsonAsync<T>(path, CancellationToken.None);
     }
-}
-
-
-public sealed class ExampleClient: ConfigClient<ConfigValue>
-{
-    public ExampleClient(IResilientConfigClientOptions options):base(options) { }
 }
